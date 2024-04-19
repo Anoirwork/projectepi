@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* --====== Custom Utilities ======-- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --====== Variables ======-- */
+$primary-color: #191c26;
+$secondary-color: #111319;
+$main-font: 'Roboto', sans-serif;
+
+/* --====== Common Styles ======-- */
+.container {
+  @apply mx-auto px-3;
+  max-width: 1320px;
+}
+
+.overflow_hide {
+  overflow: hidden;
+}
+
+/* --====== Header Section ======-- */
+#header {
+  @apply fixed top-0 left-0 w-full bg-$primary-color py-4;
+}
+
+.navbar {
+  @apply flex justify-between items-center;
+}
+
+.cart_icon .badge {
+  @apply inline-block bg-red-700 text-white text-xs py-1 px-2 rounded-full;
+}
+
+/* --====== Home / Products Section ======-- */
+#home {
+  @apply pt-24 pb-16;
+}
+
+.home_content {
+  @apply grid gap-4 md:grid-cols-auto-fit md:grid-cols-1;
+}
+
+.product_card {
+  @apply border border-$text-color py-4 shadow;
+  overflow: hidden;
+}
+
+.product_card img {
+  @apply w-1/2 md:w-auto md:max-w-xs;
+}
+
+.product_card .rating {
+  @apply text-orange-500 text-sm tracking-wide;
+}
+
+.product_card .title {
+  @apply text-lg my-4;
+}
+
+.product_card .price {
+  @apply font-bold;
+}
+
+.product_card .btn {
+  @apply bg-$primary-color w-full mt-4 py-2 text-lg transition duration-300 ease-in-out;
+}
+
+.product_card .btn:hover {
+  @apply text-gray-100;
+}
+
+.product_card .btn.added {
+  @apply text-green-500;
+}
+
+/* --====== Footer Section ======-- */
+#footer {
+  @apply text-center py-6;
+}
+
+#footer p a {
+  @apply text-gray-100 hover:opacity-100 opacity-80;
+}
+
+#footer .repo_link:hover {
+  @apply opacity-100;
+}
+
+/* --====== Cart Section ======-- */
+#cart {
+  @apply fixed top-0 left-0 z-50 w-full h-full bg-black bg-opacity-30;
+}
+
+.cart_content {
+  @apply absolute top-0 right-0 bg-$secondary-color w-full max-w-lg h-full;
+}
+
+.cart_head {
+  @apply py-4 text-center shadow;
+}
+
+.cart_head .close_btn {
+  @apply absolute top-0 left-0 bg-$secondary-color py-2 px-3 cursor-pointer opacity-80 transition duration-200 ease-in-out;
+}
+
+.cart_head .close_btn:hover {
+  @apply opacity-100;
+}
+
+.cart_head .close_btn span {
+  @apply text-2xl leading-tight;
+}
+
+.cart_body {
+  @apply py-8 px-6 max-h-4/5 overflow-y-auto;
+}
+
+.cart_items {
+  @apply grid grid-cols-[0.5fr,0.7fr,0.2fr,0.1fr] items-center gap-8 mb-6;
+}
+
+.cart_items_info .price {
+  @apply font-semibold mt-2;
+}
+
+.cart_items_quantity {
+  @apply flex flex-col items-center gap-2 bg-$primary-color p-2;
+}
+
+.cart_items_quantity span {
+  @apply text-xl bg-$body-color py-3 px-4 cursor-pointer;
+}
+
+.cart_items_quantity span:hover {
+  @apply text-gray-400;
+}
+
+.cart_items_delete {
+  @apply text-2xl leading-tight text-center cursor-pointer opacity-70 transition duration-200 ease-in-out;
+}
+
+.cart_items_delete:hover {
+  @apply opacity-100;
+}
+
+.cart_foot {
+  @apply absolute bottom-0 left-0 w-full flex justify-between items-center px-4 py-6 shadow;
+}
+
+.cart_foot h3 b {
+  @apply ml-4 text-lg;
+}
+
+.cart_foot .checkout_btn {
+  @apply bg-gray-100 text-black text-lg px-4 py-2;
+}
+
+.cart_foot .checkout_btn[disabled] {
+  @apply opacity-50 cursor-not-allowed;
+}
